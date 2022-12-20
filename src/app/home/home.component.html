@@ -1,0 +1,28 @@
+<h1>{{className}}</h1>
+<h2 [class]="textColor">Number of Studens: {{numberOfStudents}}</h2>
+<h3 *ngIf="numberOfStudents==0" class="text-warning">NO student in this class</h3>
+<button type="button" (click)="addStudent()" class="btn btn-outline-danger">
+  ADD Students
+</button>
+<button type="button" (click)="removeStudent()" class="btn btn-outline-danger">
+  Remove Students
+</button>
+
+
+
+<div class="row">
+  <div class="col-3" *ngFor="let p of products">
+    <div class="card">
+      <a routerLink="/product/{{p.id}}">
+      <img src="assets/images/iphon.png" class="img-fluid">
+      <div class="card-body">
+        <h2>{{p.name}}</h2>
+        <p class="text-danger">{{p["price"]}}</p>
+        <button *ngIf="p['qty'] > 0" class="btn btn-outline-primary" type="button">
+          Add to cart
+        </button>
+      </div>
+      </a>
+    </div>
+  </div>
+</div>
